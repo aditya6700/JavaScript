@@ -1,0 +1,24 @@
+JS with HTML
+
+DOM  ---- Document Object Model
+    1. Tags
+    2. Elements
+    3. Attributes
+
+example
+    <input id="name"> hello </input>
+    here,
+        '<' and '>' are Tags
+        'id' is attribute
+        'hello' is content
+        The whole combination is called Element
+
+Events
+---------------------------------
+Event                       	Description
+onchange 	            An HTML element has been changed
+onclick 	            The user clicks an HTML element
+onmouseover         	The user moves the mouse over an HTML element
+onmouseout 	            The user moves the mouse away from an HTML element
+onkeydown 	            The user pushes a keyboard key
+onload 	                The browser has finished loading the page
