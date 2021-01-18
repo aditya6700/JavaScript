@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+       <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <br><br>
+        <h1 class="text-center text-white bg-dark " > Form validation using RegEx </h1>
+        <br>
+        <form onSubmit="formRegex(event)">
+            <div class="form-group">
+                <label for="uname">Username</label>
+                <input type="text" id="uname" class="form-control" placeholder="enter your user name" >
+                <span id="userErr" class="text-danger font-weight-bold" ></span>
+            </div>
+            <div class="form-group">
+                <label for="uemail">Email</label>
+                <input type="text" id="uemail" class="form-control" placeholder="enter your emial here" >
+                <span id="emailErr" class="text-danger font-weight-bold" ></span>
+            </div>
+            <div class="form-group">
+                <label for="uphone">Phone Number</label>
+                <input type="text" id="uphone" class="form-control" placeholder="enter your phone number here" >
+                <span id="phoneErr" class="text-danger font-weight-bold" ></span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control" placeholder="enter your passwordhere" >
+                <span id="passErr" class="text-danger font-weight-bold" ></span>
+            </div>
+            <div class="form-group">
+                <label for="rePassword">Conform password</label>
+                <input type="password" id="rePassword" class="form-control" placeholder="re-enter your password" >
+                <span id="rePassErr" class="text-danger font-weight-bold" ></span>
+            </div>
+            <button class="btn btn-outline-primary" > validate </button>
+        </form>
+    </div>
+
+    <script>
+        const formRegex = (e) => {
+            e.preventDefault();      
+            let flag = true      
+            const userErr = document.getElementById('userErr');
+            const uname = document.getElementById('uname').value;
+            const userPattern = /^[A-Za-z .]{3,30}$/
+            if(userPattern.test(uname)){
+                uname.innerText = " "
+        
+            }else {
+                userErr.innerText = "username is invalid"
+                flag = false;
+            }
+
+            const emailErr = document.getElementById('emailErr');
+            const uemail = document.getElementById('uemail').value;
+            const emailPattern = /^[A-Za-z0-9_.]{3,}@{1}[A-Za-z]{3,8}.{1}[A-Za-z.]{3,8}$/
+            if(emailPattern.test(uemail)){
+                emailErr.innerText = " "
+            }else {
+                emailErr.innerText = "email is invalid"
+                flag = false;
+            }
+
+            const phoneErr = document.getElementById('phoneErr');
+            const uphone = document.getElementById('uphone').value;
+            const phonePattern = /^[6789][0-9]{9}$/
+            if(phonePattern.test(uphone)){
+                phoneErr.innerText = " "
+            }else {
+                phoneErr.innerText = "phone number is invalid"
+                flag = false;
+            }
+
+            const passErr = document.getElementById('passErr');
+            const password = document.getElementById('password').value;
+            const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*_.]{8,16}$/
+            if(passwordPattern.test(password)){
+                passErr.innerText = " "
+            }else {
+                passErr.innerText = "password is invalid"
+                flag = false;
+            }
+
+            const rePassErr = document.getElementById('rePassErr');
+            const rePassword = document.getElementById('rePassword').value;
+            if(password.match(rePassword)){
+                rePassErr.innerText = " "
+            }else {
+                rePassErr.innerText = "Passwords does not match"  
+                flag = false;
+            }
+
+        };
+    </script>
+</body>
+</html>

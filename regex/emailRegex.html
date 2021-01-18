@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+       <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <br><br>
+        <h1 class="text-center text-white bg-dark" > Email validation using RegEx </h1>
+        <br>
+        <form onSubmit="userRegex(event)">
+            <div class="form-group">
+                <label for="uemail">Email</label>
+                <input type="text" id="uemail" class="form-control" placeholder="enter your emial here" >
+                <p id="msg"></p>
+            </div>
+            <button class="btn btn-outline-primary" > validate </button>
+        </form>
+    </div>
+
+    <script>
+        const userRegex = (e) => {
+            e.preventDefault();
+            const msg = document.getElementById('msg');
+            const uemail = document.getElementById('uemail').value;
+            const pattern = /^[A-Za-z0-9_]{3,}@{1}[A-za-z]{4,8}.{1}[A-Za-z.]{3,8}$/
+            if(pattern.test(uemail)){
+                msg.innerText = "Email is valid",
+                msg.style.color = 'green';
+            }else {
+                msg.innerText = "Email is invalid",
+                msg.style.color = 'red';
+            }
+        };
+    </script>
+</body>
+</html>

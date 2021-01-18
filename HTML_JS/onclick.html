@@ -44,7 +44,7 @@
             <button onclick="setAtr()"> attributes </button>
         </div>
         <div id="magic" style="font-size: 1rem;
-        font-family: arial">  <span> Magic !! </span>      </div>
+        font-family: arial">  <span id="spanid" style="visibility: hidden;"> Magic !! </span>      </div>
     </div>
     
     <script>
@@ -61,8 +61,11 @@
         const setAtr = () => {
             document.getElementById('magic').setAttribute('style',
                 "font-size: 5rem; font-family: Georgia, 'Times New Roman', Times, serif;"
-            )
-        }
+            );
+
+            (document.getElementById('spanid').style.visibility === 'hidden') ?  document.getElementById('spanid').style.visibility = 'visible' : document.getElementById('spanid').style.visibility = 'hidden';
+            
+        };
     </script>
 </body>
 </html>

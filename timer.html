@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+<body>
+    <h2 id="myTimer"></h2>
+    <script>
+        let endTime = new Date("jan 16, 2021 21:00:00").getTime();
+        const timer = setInterval(() => {
+            
+   
+            let startTime = new Date().getTime();
+
+            let timer = endTime-startTime;
+
+            let days = Math.floor(timer / (1000*60*60*24));
+            let hours = Math.floor((timer % (1000*60*60*24)) / (1000*60*60))
+            let minutes = Math.floor((timer % (1000*60*60)) / (1000*60))
+            let seconds = Math.floor((timer % (1000*60)) / (1000));
+
+            document.getElementById('myTimer').innerText = `${days}D : ${hours}H : ${minutes}M : ${seconds}S `
+        },1000);
+    </script>
+</body>
+</html>
