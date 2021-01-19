@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body{
+            width : 80%;
+            height : 100vh;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+            justify-content: space-around;
+            background: rgb(15, 191, 207);
+            padding-left: 150px;
+        }
+        .counter{
+            font-size: 45px;
+        }
+    </style>
+</head>
+<body>
+    <div class="counter-container">
+        <i class="fas fa-mug-hot fa-3x"></i>
+        <div class="counter" data-target="4000"></div>
+        <span>Project Completed</span>
+     </div>
+    <div class="counter-container">
+        <i class="fas fa-users fa-3x"></i>
+        <div class="counter" data-target="15000"></div>
+        <span>Our Happy Clients</span>
+    </div>
+    <div class="counter-container">
+        <i class="fas fa-tasks fa-3x"></i>
+        <div class="counter" data-target="500"></div>
+        <span>Ongoing Projects</span>
+     </div>
+     <script src="countdownweb.js"></script>
+</body>
+</html>
